@@ -10,12 +10,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cursoradapter.widget.CursorAdapter
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.videojuegos2023peliculasv2.databinding.ActivityListaPeliculasBinding
 import com.example.videojuegos2023peliculasv2.databinding.ItemPeliculaBinding
-
-
-
 
 class ActivityLista: AppCompatActivity() {
 

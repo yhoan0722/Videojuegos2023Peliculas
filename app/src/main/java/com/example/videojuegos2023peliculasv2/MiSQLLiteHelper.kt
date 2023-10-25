@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class MiSQLLiteHelper(context: Context) : SQLiteOpenHelper(
-    context, "Peliculas.db",null, 1) {
+    context, "Pelicula.db",null, 1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val ordenCreacion = "CREATE TABLE Pelicula" +
@@ -25,7 +25,7 @@ class MiSQLLiteHelper(context: Context) : SQLiteOpenHelper(
     }
 
     fun agregarDato(titulo: String, urlImagen: String, anio: String, descripcion: String){
-val datos = ContentValues()
+        val datos = ContentValues()
         datos.put("titulo", titulo)
         datos.put("urlImagen", urlImagen)
         datos.put("anio", anio)
@@ -33,6 +33,29 @@ val datos = ContentValues()
 
         val db = this.writableDatabase
         db.insert("Pelicula", null, datos)
+        db.close()
+    }
+    fun borrarDato(id: Int): Int {
+        val args = arrayOf(id.toString())
+
+        val db = this.writableDatabase
+        val deletes = db.delete("Pelicula", "_id = ?", args)
+        //db.execSQL("DELETE FROM Peliculas WHERE _id = ?", args)
+        db.close()
+        return deletes
+    }
+
+    fun modificarDato(id: Int, titulo: String, urlImagen: String, anio: String, descripcion: String){
+        val args = arrayOf(id.toString())
+
+        val datos = ContentValues()
+        datos.put("titulo", titulo)
+        datos.put("urlImagen", urlImagen)
+        datos.put("anio", anio)
+        datos.put("descripcion", descripcion)
+
+        val db = this.writableDatabase
+        db.update("Pelicula", datos, "_id = ?", args)
         db.close()
     }
 }

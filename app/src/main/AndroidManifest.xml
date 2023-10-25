@@ -16,6 +16,12 @@
         android:theme="@style/Theme.VideoJuegos2023PeliculasV2"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityBorrar"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityActualizar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -24,12 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ActivityLista"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

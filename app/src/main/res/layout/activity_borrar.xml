@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EB9A91"
     tools:context=".ActivityBorrar">
 
     <LinearLayout
@@ -23,11 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ELIMINAR"
-            android:fontFamily="cursive"
+            android:fontFamily="casual"
             android:textSize="60sp"
             android:layout_margin="40dp"
             android:layout_marginLeft="25dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="#1E1D14"/>
 
         <EditText
             android:id="@+id/txtId"
@@ -35,7 +37,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Id" />
+            android:hint="Id"
+            android:textColorHint="#1E1D14"/>
 
 
 
@@ -48,13 +51,17 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Eliminar" />
+            android:text="Eliminar"
+            android:backgroundTint="#FF5733"
+            android:textColor="#1E1D14"/>
 
         <Button
             android:id="@+id/btnRegresar"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:text="Regresar"
+            android:backgroundTint="#FF5733"
+            android:textColor="#1E1D14"
             android:layout_gravity="right"/>
 
     </LinearLayout>

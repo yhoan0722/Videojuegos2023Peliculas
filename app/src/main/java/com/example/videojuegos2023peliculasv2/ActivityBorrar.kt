@@ -3,8 +3,10 @@ package com.example.videojuegos2023peliculasv2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
+import androidx.viewbinding.ViewBinding
 import com.example.videojuegos2023peliculasv2.databinding.ActivityBorrarBinding
 
 class ActivityBorrar : AppCompatActivity() {

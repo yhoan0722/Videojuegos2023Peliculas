@@ -2,8 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Nos da la localización aproximada -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Nos da la más exacta -->
+    <!-- <uses-permission -->
+    <!-- android:name="android.permission.WRITE_EXTERNAL_STORAGE" -->
+    <!-- android:maxSdkVersion="32" -->
+    <!-- tools:ignore="ScopedStorage" /> -->
+    <!-- <uses-permission -->
+    <!-- android:name="android.permission.READ_EXTERNAL_STORAGE" -->
+    <!-- android:maxSdkVersion="32" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +27,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VideoJuegos2023PeliculasV2"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ActivityNewPelicula"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityMenu"
+            android:exported="false" />
+
+        <activity
+            android:name=".ActivityGPS"
+            android:exported="false" />
         <activity
             android:name=".ActivityBorrar"
             android:exported="false" />

@@ -10,8 +10,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cursoradapter.widget.CursorAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.videojuegos2023peliculasv2.databinding.ActivityListaPeliculasBinding
 import com.example.videojuegos2023peliculasv2.databinding.ItemPeliculaBinding
+import retrofit2.Call
+import retrofit2.Response
 
 class ActivityLista: AppCompatActivity() {
 
@@ -32,6 +35,19 @@ class ActivityLista: AppCompatActivity() {
         val adaptador = cursorAdapterListView(this, cursor)
         binding.listaPeliculas.adapter = adaptador
         db.close()
+
+        //retrofit
+//        val retrofitTraer = RetrofitClient.consultarApi.getTraer()
+//        retrofitTraer.enqueue(object : retrofit2.Callback<Pelicula>{
+//            override fun onResponse(call: Call<Pelicula>, response: Response<Pelicula>) {
+//                binding.listaPeculas.text = response.body().toString()
+//            }
+//
+//            override fun onFailure(call: Call<Pelicula>, t: Throwable) {
+//                Toast.makeText(this@ActivityLista, "Error al consultar API Rest", Toast.LENGTH_LONG).show()
+//            }
+//
+//        })
     }
 
     inner class cursorAdapterListView(context : Context, cursor : Cursor) :
@@ -45,7 +61,7 @@ class ActivityLista: AppCompatActivity() {
         override fun bindView(view: View?, context: Context?, cursor: Cursor?) {
             val bindingItems = ItemPeliculaBinding.bind(view!!)
             bindingItems.viewTitulo.text = cursor!!.getString(1)
-            bindingItems.viewImage.text = cursor!!.getString(2)
+            //bindingItems.viewImage.() = cursor!!.getString(2)
             bindingItems.viewAnio.text = cursor!!.getString(3)
             bindingItems.viewDescripcion.text = cursor!!.getString(4)
 
@@ -53,7 +69,7 @@ class ActivityLista: AppCompatActivity() {
             view.setOnClickListener{
                 Toast.makeText(this@ActivityLista, "${bindingItems.viewTitulo.text}," +
                         "${bindingItems.viewAnio.text}," +
-                        " ${bindingItems.viewImage.text}," +
+                        //" ${bindingItems.viewImage.text}," +
                         "${bindingItems.viewDescripcion.text}",
                     Toast.LENGTH_LONG).show()
             }

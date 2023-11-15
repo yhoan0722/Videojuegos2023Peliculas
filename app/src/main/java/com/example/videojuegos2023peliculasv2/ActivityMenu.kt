@@ -7,20 +7,20 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.viewbinding.ViewBinding
-import com.example.videojuegos2023peliculasv2.databinding.ActivityMainBinding
+import com.example.videojuegos2023peliculasv2.databinding.ActivityMenuBinding
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
 
-class MainActivity : AppCompatActivity() {
+class ActivityMenu : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMenuBinding
     lateinit var peliculaDBHelper: MiSQLLiteHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         peliculaDBHelper = MiSQLLiteHelper(this)
@@ -37,30 +37,34 @@ class MainActivity : AppCompatActivity() {
 //                Toast.makeText(this, "No se ha podido guardar",Toast.LENGTH_LONG).show()
 //            }
 //        }
-//
+
         binding.btnListaPeliculas.setOnClickListener{
             val intentListView = Intent(this, ActivityLista:: class.java)
             startActivity(intentListView)
         }
-//
-//        val Delete = findViewById<TextView>(R.id.btnBorrar)
-//        Delete.setOnClickListener {
-//                goToDelete()
-//        }
-//
-//        val Update = findViewById<TextView>(R.id.btnActualizarPelicula)
-//        Update.setOnClickListener {
-//                goToUpdate()
-//        }
-//
-//        val Gps = findViewById<TextView>(R.id.btnGPS)
-//        Gps.setOnClickListener {
-//            goToGPS()
-//        }
 
-        val Menu = findViewById<TextView>(R.id.btnAdministrar)
-        Menu.setOnClickListener {
-            goToMenu()
+        val Delete = findViewById<TextView>(R.id.btnBorrar)
+        Delete.setOnClickListener {
+            goToDelete()
+        }
+
+        val Update = findViewById<TextView>(R.id.btnActualizarPelicula)
+        Update.setOnClickListener {
+            goToUpdate()
+        }
+
+        val Gps = findViewById<TextView>(R.id.btnGPS)
+        Gps.setOnClickListener {
+            goToGPS()
+        }
+
+        val Create = findViewById<TextView>(R.id.btnInsertar)
+        Create.setOnClickListener {
+            goToNewPelicula()
+        }
+        val Back = findViewById<TextView>(R.id.btnBack)
+        Back.setOnClickListener {
+            goToBack()
         }
 
 
@@ -100,9 +104,12 @@ class MainActivity : AppCompatActivity() {
         val i = Intent(this, ActivityGPS::class.java)
         startActivity(i)
     }
-
-    private fun goToMenu(){
-        val i = Intent(this, ActivityMenu::class.java)
+    private fun goToNewPelicula(){
+        val i = Intent(this, ActivityNewPelicula::class.java)
+        startActivity(i)
+    }
+    private fun goToBack(){
+        val i = Intent(this, MainActivity::class.java)
         startActivity(i)
     }
 }

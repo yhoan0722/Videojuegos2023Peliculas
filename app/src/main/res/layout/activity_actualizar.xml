@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EB9A91"
     tools:context=".ActivityActualizar">
 
     <LinearLayout
@@ -23,10 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Actualizar"
-            android:fontFamily="cursive"
+            android:fontFamily="casual"
             android:textSize="60sp"
             android:layout_margin="40dp"
             android:layout_marginLeft="25dp"
+            android:textColor="#1E1D14"
             android:textAlignment="center"/>
 
         <EditText
@@ -35,7 +37,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Id" />
+            android:hint="Id"
+            android:textColorHint="#1E1D14"/>
 
         <EditText
             android:id="@+id/txtTitulo"
@@ -43,7 +46,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:hint="Titulo" />
+            android:hint="Titulo"
+            android:textColorHint="#1E1D14"/>
 
         <EditText
             android:id="@+id/txtYear"
@@ -51,7 +55,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Año" />
+            android:hint="Año"
+            android:textColorHint="#1E1D14"/>
 
         <EditText
             android:id="@+id/txtImage"
@@ -59,7 +64,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:hint="UrlImagen" />
+            android:hint="UrlImagen"
+            android:textColorHint="#1E1D14"/>
 
         <EditText
             android:id="@+id/txtDescripcion"
@@ -67,7 +73,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:hint="Descripcion" />
+            android:hint="Descripcion"
+            android:textColorHint="#1E1D14"/>
 
         <!--
             BUTTONS
@@ -78,14 +85,18 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Actualizar" />
+            android:text="Actualizar"
+            android:backgroundTint="#FF5733"
+            android:textColor="#1E1D14"/>
 
         <Button
             android:id="@+id/btnRegresar"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:text="Regresar"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:backgroundTint="#FF5733"
+            android:textColor="#1E1D14"/>
 
     </LinearLayout>
 
